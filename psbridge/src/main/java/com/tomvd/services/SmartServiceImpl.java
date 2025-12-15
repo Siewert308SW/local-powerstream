@@ -36,7 +36,7 @@ public class SmartServiceImpl implements SmartService {
         }
         if (data == null || gridPower == null || enabled == null || !enabled || soc == null) {return;}
 
-        if (soc < 13) {
+        if (soc < config.getLowSoc()) {
             // battery soc dropped too low, make sure we shut off the inverter and dont do anything more
             if (data.currentPower() > 0) {
                 sl.getDeviceService().publishPowerSetting(0);

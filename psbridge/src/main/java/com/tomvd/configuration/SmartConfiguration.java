@@ -10,6 +10,7 @@ public class SmartConfiguration {
     String chargerTopic;
     String socTopic;
     Integer maxPower;
+    Integer lowSoc;
     public boolean isEnabled() { return enabled; }
     public void setEnabled(boolean enabled) { this.enabled = enabled; }
     public String getMeterTopic() { return meterTopic; }
@@ -22,4 +23,6 @@ public class SmartConfiguration {
     public void setSocTopic(String socTopic) { this.socTopic = socTopic; }
     public Integer getMaxPower() { return maxPower; }
     public void setMaxPower(Integer maxPower) { this.maxPower = maxPower; }
+    public Integer getLowSoc() { return lowSoc==null?15:lowSoc; }
+    public void setLowSoc(Integer lowSoc) { this.lowSoc = lowSoc; }
 }
